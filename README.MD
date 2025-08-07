@@ -9,6 +9,7 @@ Webブラウザ上でAI（LLM）と音声対話
 Flaskアプリをngrokによりサーバ化
 
 ## Demo movie
+presentation_movie.mp4
 <video src="./presentation_movie.mp4" controls="true"></video>
 
 ## 使用手順
