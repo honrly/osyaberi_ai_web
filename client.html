@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <title>AIと会話</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        h1,
+        h2 {
+            margin-top: 30px;
+        }
+
+        #record-btn {
+            padding: 1em;
+            font-size: 1.2em;
+        }
+
+        #status,
+        #input-text,
+        #response-text {
+            margin-top: 1em;
+            font-weight: bold;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input {
+            width: 80px;
+        }
+
+        button {
+            margin-top: 10px;
+            padding: 5px 10px;
+        }
+
+        pre {
+            background: #f0f0f0;
+            padding: 10px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>AIと会話</h1>
+    <button id="record-btn">録音開始</button>
+    <div id="status">準備完了</div>
+    <div id="input-text"></div>
+    <div id="response-text"></div>
+
+    <h2>パラメータ設定</h2>
+    <form id="jtalkForm">
+        <label for="speed">スピード (0.1～2.0):</label><br>
+        <input type="number" id="speed" name="speed" step="0.1" min="0.1" max="2.0" value="1.0"><br><br>
+
+        <label for="volume">ボリューム (0.1～10.0):</label><br>
+        <input type="number" id="volume" name="volume" step="0.1" min="0.1" max="10.0" value="1.0"><br><br>
+
+        <button type="button" onclick="submitParams()">パラメータ送信</button>
+        <pre id="param"></pre>
+    </form>
+
+    <h2>会話履歴の初期化</h2>
+    <button onclick="resetMessages()">初期化</button>
+    <pre id="initLog"></pre>
+
+    <script src="client.js"></script>
+</body>
+
+</html>
